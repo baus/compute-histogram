@@ -1,0 +1,31 @@
+{
+  "name": "compute-histogram",
+  "version": "0.9.0",
+  "description": "Computes histogram buckets for an array of values.",
+  "main": "./lib",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/baus/compute-histogram.git"
+  },
+  "keywords": [
+    "compute",
+    "statistics",
+    "stats",
+    "histogram"
+  ],
+  "author": "Christopher Baus",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/baus/compute-histogram/issues"
+  },
+  "homepage": "https://github.com/baus/compute-histogram#readme",
+  "dependencies": {
+    "compute-iqr": "^1.1.0"
+  },
+  "devDependencies": {
+    "jest": "^22.4.3"
+  }
+}
