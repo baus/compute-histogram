@@ -2,3 +2,4 @@
 /.idea/
 *~
 .emacs.desktop
+/dist/
