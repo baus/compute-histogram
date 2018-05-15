@@ -47,8 +47,8 @@ var r = computeHistogram(arr, 5);
 ```
 #### computeHistogram(arr, numBins, trimTailPercentage)
 
-Computes the histogram for the provided input `array` and binSize. This also trims a percertage off of each
-end of the distribution to allow filtering of outliers.
+Computes the histogram for the provided input `array` and `binSize`. This also trims a percertage from each
+end of the distribution using `trimTailPercentage` to allow filtering of outliers.
 
 ``` javascript
 var arr = [ 8, 2, 3, 9, 5, 1, 4, 10, 7, 0, 6 ];
