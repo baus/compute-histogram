@@ -1,10 +1,11 @@
 {
   "name": "compute-histogram",
-  "version": "0.9.4",
+  "version": "0.9.5",
   "description": "Computes histogram buckets for an array of values.",
-  "main": "./lib",
+  "main": "./dist",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "build": "babel lib --out-dir dist"
   },
   "repository": {
     "type": "git",
@@ -26,6 +27,8 @@
     "compute-iqr": "^1.1.0"
   },
   "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
     "jest": "^22.4.3"
   }
 }
