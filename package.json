@@ -1,7 +1,7 @@
 {
   "name": "compute-histogram",
   "version": "0.9.6",
-  "description": "Computes histogram buckets for an array of values.",
+  "description": "Computes histogram bin counts for an array of values.",
   "main": "./dist",
   "scripts": {
     "test": "jest",
