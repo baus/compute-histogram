@@ -35,9 +35,9 @@ var r = computeHistogram(arr);
 #### computeHistogram(arr, numBins)
 If numBins isn't specified or is set to zero, the number of bins is automatically
 computed using the maximum of the [Sturges](https://en.wikipedia.org/wiki/Histogram#Sturges'_formula) and 
-[Freedman–Diaconis' choice](https://en.wikipedia.org/wiki/Histogram#Freedman%E2%80%93Diaconis'_choice) methods is used.
+[Freedman–Diaconis' choice](https://en.wikipedia.org/wiki/Histogram#Freedman%E2%80%93Diaconis'_choice) methods.
 
-Otherwise the histogram for the provided input `array` and binSize is computed. 
+Otherwise the histogram for the provided input `array` and `binSize` is computed. 
 
 ``` javascript
 var arr = [ 8, 2, 3, 9, 5, 1, 4, 10, 7, 0, 6 ];
