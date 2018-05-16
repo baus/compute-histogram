@@ -1,6 +1,6 @@
 {
   "name": "compute-histogram",
-  "version": "0.9.5",
+  "version": "0.9.6",
   "description": "Computes histogram buckets for an array of values.",
   "main": "./dist",
   "scripts": {
