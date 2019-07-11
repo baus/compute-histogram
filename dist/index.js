@@ -55,7 +55,7 @@ function calculateHistogram(arr) {
     dataCopy.forEach(function (item) {
         var binIndex = Math.floor((item - min) / binSize);
         // for values that lie exactly on last bin we need to subtract one
-        if (binIndex === numBins) {
+        if (binIndex === numBins || JSON.stringify(binIndex) === numBins) {
             binIndex--;
         }
         bins[binIndex][1]++;
