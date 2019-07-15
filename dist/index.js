@@ -17,6 +17,8 @@ var computeIQR = require('compute-iqr');
 function calculateHistogram(arr) {
     var numBins = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0;
     var trimTailPercentage = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 0.00;
+    var minimum = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : null;
+    var maximum = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : null;
 
     var bins = [];
 
@@ -34,6 +36,10 @@ function calculateHistogram(arr) {
 
     var min = dataCopy[0];
     var max = dataCopy[dataCopy.length - 1];
+    if (!(minimum === null || maximum === null)) {
+        min = minimum;
+        max = maximum;
+    }
 
     if (numBins === 0) {
         var sturges = Math.ceil(Math.log2(dataCopy.length)) + 1;
