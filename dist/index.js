@@ -18,8 +18,6 @@ function calculateHistogram(arr) {
     var numBins = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0;
     var trimTailPercentage = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 0.00;
 
-    var bins = [];
-
     var dataCopy = arr.sort(function (a, b) {
         return a - b;
     });
@@ -47,9 +45,9 @@ function calculateHistogram(arr) {
         }
         numBins = Math.max(sturges, fdbins);
     }
-    for (var i = 0; i < numBins; i++) {
-        bins.push([i, 0]);
-    }
+    var bins = new Array(numBins ? numBins : 0).fill([0, 0]).map(function (_, i) {
+        return [i, 0];
+    });
 
     var binSize = (max - min) / numBins === 0 ? 1 : (max - min) / numBins;
     dataCopy.forEach(function (item) {

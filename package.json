@@ -1,6 +1,6 @@
 {
   "name": "compute-histogram",
-  "version": "0.9.7",
+  "version": "0.9.8",
   "description": "Computes histogram bin counts for an array of values.",
   "main": "./dist",
   "scripts": {
