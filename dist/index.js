@@ -14,7 +14,7 @@ var computeIQR = require('compute-iqr');
  * @returns Array Two dimensional array. First dimension is the index of the bin, and the second index
  *          is the count. This allows for direct import into ChartJS without having to change the data shape
  */
-function calculateHistogram(arr) {
+function calculateHistogramWithEdges(arr) {
     var numBins = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0;
     var trimTailPercentage = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 0.00;
 
@@ -50,6 +50,10 @@ function calculateHistogram(arr) {
     });
 
     var binSize = (max - min) / numBins === 0 ? 1 : (max - min) / numBins;
+    var edges = Array(numBins ? numBins + 1 : 0).fill(0).map(function (_, i) {
+        return binSize ? i * binSize + min : 0;
+    });
+    console.log(edges);
     dataCopy.forEach(function (item) {
         var binIndex = Math.floor((item - min) / binSize);
         // for values that lie exactly on last bin we need to subtract one
@@ -59,6 +63,14 @@ function calculateHistogram(arr) {
         bins[binIndex][1]++;
     });
 
-    return bins;
+    return [bins, edges];
 }
+
+function calculateHistogram(arr) {
+    var numBins = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0;
+    var trimTailPercentage = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 0.00;
+
+    return calculateHistogramWithEdges(arr, numBins, trimTailPercentage)[0];
+}
+
 module.exports = calculateHistogram;
